@@ -12,7 +12,7 @@ public class AminApplication {
 
 	@GetMapping("/WeatherForecast")
 	public String getMessage() {
-		return "Pinche laol estas bien qlon";
+		return "Hoy hace buen dia para programar";
 	}
 
 	public static void main(String[] args) {
