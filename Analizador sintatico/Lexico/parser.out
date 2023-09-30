@@ -1,0 +1,138 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    DOT
+    LBRACE
+    LPAREN
+    RBRACE
+    RPAREN
+    STRING
+
+Grammar
+
+Rule 0     S' -> for_loop
+Rule 1     for_loop -> FOR INT ID EQUALS NUM SEMICOLON ID LEQ NUM SEMICOLON ID PLUS
+
+Terminals, with rules where they appear
+
+DOT                  : 
+EQUALS               : 1
+FOR                  : 1
+ID                   : 1 1 1
+INT                  : 1
+LBRACE               : 
+LEQ                  : 1
+LPAREN               : 
+NUM                  : 1 1
+PLUS                 : 1
+RBRACE               : 
+RPAREN               : 
+SEMICOLON            : 1 1
+STRING               : 
+error                : 
+
+Nonterminals, with rules where they appear
+
+for_loop             : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . for_loop
+    (1) for_loop -> . FOR INT ID EQUALS NUM SEMICOLON ID LEQ NUM SEMICOLON ID PLUS
+
+    FOR             shift and go to state 2
+
+    for_loop                       shift and go to state 1
+
+state 1
+
+    (0) S' -> for_loop .
+
+
+
+state 2
+
+    (1) for_loop -> FOR . INT ID EQUALS NUM SEMICOLON ID LEQ NUM SEMICOLON ID PLUS
+
+    INT             shift and go to state 3
+
+
+state 3
+
+    (1) for_loop -> FOR INT . ID EQUALS NUM SEMICOLON ID LEQ NUM SEMICOLON ID PLUS
+
+    ID              shift and go to state 4
+
+
+state 4
+
+    (1) for_loop -> FOR INT ID . EQUALS NUM SEMICOLON ID LEQ NUM SEMICOLON ID PLUS
+
+    EQUALS          shift and go to state 5
+
+
+state 5
+
+    (1) for_loop -> FOR INT ID EQUALS . NUM SEMICOLON ID LEQ NUM SEMICOLON ID PLUS
+
+    NUM             shift and go to state 6
+
+
+state 6
+
+    (1) for_loop -> FOR INT ID EQUALS NUM . SEMICOLON ID LEQ NUM SEMICOLON ID PLUS
+
+    SEMICOLON       shift and go to state 7
+
+
+state 7
+
+    (1) for_loop -> FOR INT ID EQUALS NUM SEMICOLON . ID LEQ NUM SEMICOLON ID PLUS
+
+    ID              shift and go to state 8
+
+
+state 8
+
+    (1) for_loop -> FOR INT ID EQUALS NUM SEMICOLON ID . LEQ NUM SEMICOLON ID PLUS
+
+    LEQ             shift and go to state 9
+
+
+state 9
+
+    (1) for_loop -> FOR INT ID EQUALS NUM SEMICOLON ID LEQ . NUM SEMICOLON ID PLUS
+
+    NUM             shift and go to state 10
+
+
+state 10
+
+    (1) for_loop -> FOR INT ID EQUALS NUM SEMICOLON ID LEQ NUM . SEMICOLON ID PLUS
+
+    SEMICOLON       shift and go to state 11
+
+
+state 11
+
+    (1) for_loop -> FOR INT ID EQUALS NUM SEMICOLON ID LEQ NUM SEMICOLON . ID PLUS
+
+    ID              shift and go to state 12
+
+
+state 12
+
+    (1) for_loop -> FOR INT ID EQUALS NUM SEMICOLON ID LEQ NUM SEMICOLON ID . PLUS
+
+    PLUS            shift and go to state 13
+
+
+state 13
+
+    (1) for_loop -> FOR INT ID EQUALS NUM SEMICOLON ID LEQ NUM SEMICOLON ID PLUS .
+
+    $end            reduce using rule 1 (for_loop -> FOR INT ID EQUALS NUM SEMICOLON ID LEQ NUM SEMICOLON ID PLUS .)
+
