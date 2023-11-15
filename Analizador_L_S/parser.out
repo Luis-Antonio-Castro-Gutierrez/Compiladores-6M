@@ -1,0 +1,272 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    LBRACE
+    LEQ
+    NOTEQ
+    RBRACE
+    SEMICOLON
+
+Grammar
+
+Rule 0     S' -> for_loop
+Rule 1     for_loop -> FOR ID ID LPAREN NUM DOT DOT NUM RPAREN IF ID ID NUM EQUALS EQUALS NUM ID ID DOT ID PLUS STRING ELSE ID ID DOT ID PLUS STRING ID ID
+
+Terminals, with rules where they appear
+
+DOT                  : 1 1 1 1
+ELSE                 : 1
+EQUALS               : 1 1
+FOR                  : 1
+ID                   : 1 1 1 1 1 1 1 1 1 1 1 1
+IF                   : 1
+LBRACE               : 
+LEQ                  : 
+LPAREN               : 1
+NOTEQ                : 
+NUM                  : 1 1 1 1
+PLUS                 : 1 1
+RBRACE               : 
+RPAREN               : 1
+SEMICOLON            : 
+STRING               : 1 1
+error                : 
+
+Nonterminals, with rules where they appear
+
+for_loop             : 0
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . for_loop
+    (1) for_loop -> . FOR ID ID LPAREN NUM DOT DOT NUM RPAREN IF ID ID NUM EQUALS EQUALS NUM ID ID DOT ID PLUS STRING ELSE ID ID DOT ID PLUS STRING ID ID
+
+    FOR             shift and go to state 2
+
+    for_loop                       shift and go to state 1
+
+state 1
+
+    (0) S' -> for_loop .
+
+
+
+state 2
+
+    (1) for_loop -> FOR . ID ID LPAREN NUM DOT DOT NUM RPAREN IF ID ID NUM EQUALS EQUALS NUM ID ID DOT ID PLUS STRING ELSE ID ID DOT ID PLUS STRING ID ID
+
+    ID              shift and go to state 3
+
+
+state 3
+
+    (1) for_loop -> FOR ID . ID LPAREN NUM DOT DOT NUM RPAREN IF ID ID NUM EQUALS EQUALS NUM ID ID DOT ID PLUS STRING ELSE ID ID DOT ID PLUS STRING ID ID
+
+    ID              shift and go to state 4
+
+
+state 4
+
+    (1) for_loop -> FOR ID ID . LPAREN NUM DOT DOT NUM RPAREN IF ID ID NUM EQUALS EQUALS NUM ID ID DOT ID PLUS STRING ELSE ID ID DOT ID PLUS STRING ID ID
+
+    LPAREN          shift and go to state 5
+
+
+state 5
+
+    (1) for_loop -> FOR ID ID LPAREN . NUM DOT DOT NUM RPAREN IF ID ID NUM EQUALS EQUALS NUM ID ID DOT ID PLUS STRING ELSE ID ID DOT ID PLUS STRING ID ID
+
+    NUM             shift and go to state 6
+
+
+state 6
+
+    (1) for_loop -> FOR ID ID LPAREN NUM . DOT DOT NUM RPAREN IF ID ID NUM EQUALS EQUALS NUM ID ID DOT ID PLUS STRING ELSE ID ID DOT ID PLUS STRING ID ID
+
+    DOT             shift and go to state 7
+
+
+state 7
+
+    (1) for_loop -> FOR ID ID LPAREN NUM DOT . DOT NUM RPAREN IF ID ID NUM EQUALS EQUALS NUM ID ID DOT ID PLUS STRING ELSE ID ID DOT ID PLUS STRING ID ID
+
+    DOT             shift and go to state 8
+
+
+state 8
+
+    (1) for_loop -> FOR ID ID LPAREN NUM DOT DOT . NUM RPAREN IF ID ID NUM EQUALS EQUALS NUM ID ID DOT ID PLUS STRING ELSE ID ID DOT ID PLUS STRING ID ID
+
+    NUM             shift and go to state 9
+
+
+state 9
+
+    (1) for_loop -> FOR ID ID LPAREN NUM DOT DOT NUM . RPAREN IF ID ID NUM EQUALS EQUALS NUM ID ID DOT ID PLUS STRING ELSE ID ID DOT ID PLUS STRING ID ID
+
+    RPAREN          shift and go to state 10
+
+
+state 10
+
+    (1) for_loop -> FOR ID ID LPAREN NUM DOT DOT NUM RPAREN . IF ID ID NUM EQUALS EQUALS NUM ID ID DOT ID PLUS STRING ELSE ID ID DOT ID PLUS STRING ID ID
+
+    IF              shift and go to state 11
+
+
+state 11
+
+    (1) for_loop -> FOR ID ID LPAREN NUM DOT DOT NUM RPAREN IF . ID ID NUM EQUALS EQUALS NUM ID ID DOT ID PLUS STRING ELSE ID ID DOT ID PLUS STRING ID ID
+
+    ID              shift and go to state 12
+
+
+state 12
+
+    (1) for_loop -> FOR ID ID LPAREN NUM DOT DOT NUM RPAREN IF ID . ID NUM EQUALS EQUALS NUM ID ID DOT ID PLUS STRING ELSE ID ID DOT ID PLUS STRING ID ID
+
+    ID              shift and go to state 13
+
+
+state 13
+
+    (1) for_loop -> FOR ID ID LPAREN NUM DOT DOT NUM RPAREN IF ID ID . NUM EQUALS EQUALS NUM ID ID DOT ID PLUS STRING ELSE ID ID DOT ID PLUS STRING ID ID
+
+    NUM             shift and go to state 14
+
+
+state 14
+
+    (1) for_loop -> FOR ID ID LPAREN NUM DOT DOT NUM RPAREN IF ID ID NUM . EQUALS EQUALS NUM ID ID DOT ID PLUS STRING ELSE ID ID DOT ID PLUS STRING ID ID
+
+    EQUALS          shift and go to state 15
+
+
+state 15
+
+    (1) for_loop -> FOR ID ID LPAREN NUM DOT DOT NUM RPAREN IF ID ID NUM EQUALS . EQUALS NUM ID ID DOT ID PLUS STRING ELSE ID ID DOT ID PLUS STRING ID ID
+
+    EQUALS          shift and go to state 16
+
+
+state 16
+
+    (1) for_loop -> FOR ID ID LPAREN NUM DOT DOT NUM RPAREN IF ID ID NUM EQUALS EQUALS . NUM ID ID DOT ID PLUS STRING ELSE ID ID DOT ID PLUS STRING ID ID
+
+    NUM             shift and go to state 17
+
+
+state 17
+
+    (1) for_loop -> FOR ID ID LPAREN NUM DOT DOT NUM RPAREN IF ID ID NUM EQUALS EQUALS NUM . ID ID DOT ID PLUS STRING ELSE ID ID DOT ID PLUS STRING ID ID
+
+    ID              shift and go to state 18
+
+
+state 18
+
+    (1) for_loop -> FOR ID ID LPAREN NUM DOT DOT NUM RPAREN IF ID ID NUM EQUALS EQUALS NUM ID . ID DOT ID PLUS STRING ELSE ID ID DOT ID PLUS STRING ID ID
+
+    ID              shift and go to state 19
+
+
+state 19
+
+    (1) for_loop -> FOR ID ID LPAREN NUM DOT DOT NUM RPAREN IF ID ID NUM EQUALS EQUALS NUM ID ID . DOT ID PLUS STRING ELSE ID ID DOT ID PLUS STRING ID ID
+
+    DOT             shift and go to state 20
+
+
+state 20
+
+    (1) for_loop -> FOR ID ID LPAREN NUM DOT DOT NUM RPAREN IF ID ID NUM EQUALS EQUALS NUM ID ID DOT . ID PLUS STRING ELSE ID ID DOT ID PLUS STRING ID ID
+
+    ID              shift and go to state 21
+
+
+state 21
+
+    (1) for_loop -> FOR ID ID LPAREN NUM DOT DOT NUM RPAREN IF ID ID NUM EQUALS EQUALS NUM ID ID DOT ID . PLUS STRING ELSE ID ID DOT ID PLUS STRING ID ID
+
+    PLUS            shift and go to state 22
+
+
+state 22
+
+    (1) for_loop -> FOR ID ID LPAREN NUM DOT DOT NUM RPAREN IF ID ID NUM EQUALS EQUALS NUM ID ID DOT ID PLUS . STRING ELSE ID ID DOT ID PLUS STRING ID ID
+
+    STRING          shift and go to state 23
+
+
+state 23
+
+    (1) for_loop -> FOR ID ID LPAREN NUM DOT DOT NUM RPAREN IF ID ID NUM EQUALS EQUALS NUM ID ID DOT ID PLUS STRING . ELSE ID ID DOT ID PLUS STRING ID ID
+
+    ELSE            shift and go to state 24
+
+
+state 24
+
+    (1) for_loop -> FOR ID ID LPAREN NUM DOT DOT NUM RPAREN IF ID ID NUM EQUALS EQUALS NUM ID ID DOT ID PLUS STRING ELSE . ID ID DOT ID PLUS STRING ID ID
+
+    ID              shift and go to state 25
+
+
+state 25
+
+    (1) for_loop -> FOR ID ID LPAREN NUM DOT DOT NUM RPAREN IF ID ID NUM EQUALS EQUALS NUM ID ID DOT ID PLUS STRING ELSE ID . ID DOT ID PLUS STRING ID ID
+
+    ID              shift and go to state 26
+
+
+state 26
+
+    (1) for_loop -> FOR ID ID LPAREN NUM DOT DOT NUM RPAREN IF ID ID NUM EQUALS EQUALS NUM ID ID DOT ID PLUS STRING ELSE ID ID . DOT ID PLUS STRING ID ID
+
+    DOT             shift and go to state 27
+
+
+state 27
+
+    (1) for_loop -> FOR ID ID LPAREN NUM DOT DOT NUM RPAREN IF ID ID NUM EQUALS EQUALS NUM ID ID DOT ID PLUS STRING ELSE ID ID DOT . ID PLUS STRING ID ID
+
+    ID              shift and go to state 28
+
+
+state 28
+
+    (1) for_loop -> FOR ID ID LPAREN NUM DOT DOT NUM RPAREN IF ID ID NUM EQUALS EQUALS NUM ID ID DOT ID PLUS STRING ELSE ID ID DOT ID . PLUS STRING ID ID
+
+    PLUS            shift and go to state 29
+
+
+state 29
+
+    (1) for_loop -> FOR ID ID LPAREN NUM DOT DOT NUM RPAREN IF ID ID NUM EQUALS EQUALS NUM ID ID DOT ID PLUS STRING ELSE ID ID DOT ID PLUS . STRING ID ID
+
+    STRING          shift and go to state 30
+
+
+state 30
+
+    (1) for_loop -> FOR ID ID LPAREN NUM DOT DOT NUM RPAREN IF ID ID NUM EQUALS EQUALS NUM ID ID DOT ID PLUS STRING ELSE ID ID DOT ID PLUS STRING . ID ID
+
+    ID              shift and go to state 31
+
+
+state 31
+
+    (1) for_loop -> FOR ID ID LPAREN NUM DOT DOT NUM RPAREN IF ID ID NUM EQUALS EQUALS NUM ID ID DOT ID PLUS STRING ELSE ID ID DOT ID PLUS STRING ID . ID
+
+    ID              shift and go to state 32
+
+
+state 32
+
+    (1) for_loop -> FOR ID ID LPAREN NUM DOT DOT NUM RPAREN IF ID ID NUM EQUALS EQUALS NUM ID ID DOT ID PLUS STRING ELSE ID ID DOT ID PLUS STRING ID ID .
+
+    $end            reduce using rule 1 (for_loop -> FOR ID ID LPAREN NUM DOT DOT NUM RPAREN IF ID ID NUM EQUALS EQUALS NUM ID ID DOT ID PLUS STRING ELSE ID ID DOT ID PLUS STRING ID ID .)
+
